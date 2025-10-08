@@ -1,9 +1,29 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Monitor, ClipboardCheck, Sparkles } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 import heroPets from "@/assets/hero-pets.jpg";
+import vetWithDog from "@/assets/vet-with-dog.jpg";
+import Footer from "@/components/Footer";
 
 const Index = () => {
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      toast({
+        title: "Cadastro realizado!",
+        description: "Você receberá nossas novidades em breve.",
+      });
+      setEmail("");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -17,11 +37,16 @@ const Index = () => {
               Está procurando uma clínica veterinária perto de você? Nós te ajudamos a encontrar a melhor opção em poucos cliques. Seu pet agradece!
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="font-semibold">
-                Começe Agora
+              <Button size="lg" className="font-semibold" asChild>
+                <Link to="/clinicas">Começe Agora</Link>
               </Button>
-              <Button size="lg" variant="outline" className="font-semibold border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                Sou Uma Clínica
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="font-semibold border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                asChild
+              >
+                <Link to="/login">Sou Uma Clínica</Link>
               </Button>
             </div>
           </div>
@@ -83,6 +108,43 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Join Us Section */}
+      <section className="container mx-auto px-4 py-16 md:py-24">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              Junte-se a Nós
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Cadastre-se para receber dicas de saúde pet, novidades e encontrar as melhores clínicas veterinárias.
+            </p>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <Input
+                type="email"
+                placeholder="Seu melhor e-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="text-lg py-6"
+              />
+              <Button type="submit" size="lg" className="w-full md:w-auto font-semibold">
+                Cadastre-se
+              </Button>
+            </form>
+          </div>
+          <div className="relative">
+            <img 
+              src={vetWithDog} 
+              alt="Veterinário com cachorro" 
+              className="w-full h-auto rounded-lg shadow-xl"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
