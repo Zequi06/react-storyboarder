@@ -128,8 +128,8 @@ const Index = () => {
                 required
                 className="text-lg py-6"
               />
-              <Button type="submit" size="lg" className="w-full md:w-auto font-semibold">
-                Cadastre-se
+              <Button size="lg" className="w-full md:w-auto font-semibold" asChild>
+                <Link to="/cadastro">Cadastre-se</Link>
               </Button>
             </form>
           </div>

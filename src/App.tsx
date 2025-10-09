@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Clinicas from "./pages/Clinicas";
 import Recomendacoes from "./pages/Recomendacoes";
 import Login from "./pages/Login";
+import Cadastro from "./pages/Cadastro";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 import TermosUso from "./pages/TermosUso";
 import AvisoLegal from "./pages/AvisoLegal";
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/clinicas" element={<Clinicas />} />
           <Route path="/recomendacoes" element={<Recomendacoes />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
           <Route path="/termos-uso" element={<TermosUso />} />
           <Route path="/aviso-legal" element={<AvisoLegal />} />
