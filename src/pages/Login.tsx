@@ -14,6 +14,8 @@ const Login = () => {
           <CardTitle className="text-3xl text-center font-bold">Seja Bem Vindo</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
+          <img
+            src="/pata.png" 
           <div className="space-y-2">
             <Label htmlFor="email">Email:</Label>
             <Input id="email" type="email" />
