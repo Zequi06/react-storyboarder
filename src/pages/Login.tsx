@@ -11,10 +11,12 @@ const Login = () => {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4 relative">
       <div 
-        className="absolute inset-0 opacity-10 bg-repeat"
+        className="absolute inset-0 opacity-10"
         style={{
           backgroundImage: `url(${pataImage})`,
-          backgroundSize: '200px',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       />
       <Card className="w-full max-w-md shadow-xl relative z-10">
