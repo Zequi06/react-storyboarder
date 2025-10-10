@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Monitor, ClipboardCheck, Sparkles } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import heroPets from "@/assets/hero-pets.jpg";
 import vetWithDog from "@/assets/vet-with-dog.jpg";
 import Footer from "@/components/Footer";
@@ -12,15 +12,18 @@ import Footer from "@/components/Footer";
 const Index = () => {
   const [email, setEmail] = useState("");
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (email.trim()) {
+      navigate("/cadastro");
+    } else {
       toast({
-        title: "Cadastro realizado!",
-        description: "Você receberá nossas novidades em breve.",
+        title: "Email obrigatório",
+        description: "Por favor, preencha seu email antes de continuar.",
+        variant: "destructive",
       });
-      setEmail("");
     }
   };
 
@@ -128,8 +131,8 @@ const Index = () => {
                 required
                 className="text-lg py-6"
               />
-              <Button size="lg" className="w-full md:w-auto font-semibold" asChild>
-                <Link to="/cadastro">Cadastre-se</Link>
+              <Button type="submit" size="lg" className="w-full md:w-auto font-semibold">
+                Cadastre-se
               </Button>
             </form>
           </div>
