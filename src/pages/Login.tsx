@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link, useNavigate } from "react-router-dom";
+import pataImage from "@/assets/pata.png";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -14,6 +15,13 @@ const Login = () => {
           <CardTitle className="text-3xl text-center font-bold">Seja Bem Vindo</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
+          <div className="flex justify-center mb-4">
+            <img 
+              src={pataImage} 
+              alt="Patinhas decorativas" 
+              className="w-full max-w-xs h-auto"
+            />
+          </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email:</Label>
             <Input id="email" type="email" />
