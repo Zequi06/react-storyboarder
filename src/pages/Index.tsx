@@ -43,12 +43,7 @@ const Index = () => {
               <Button size="lg" className="font-semibold" asChild>
                 <Link to="/clinicas">Começe Agora</Link>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="font-semibold border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                asChild
-              >
+              <Button size="lg" className="font-semibold" asChild>
                 <Link to="/login">Sou Uma Clínica</Link>
               </Button>
             </div>
