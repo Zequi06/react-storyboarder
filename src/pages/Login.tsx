@@ -9,19 +9,19 @@ const Login = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4">
-      <Card className="w-full max-w-md shadow-xl">
+    <div className="min-h-screen bg-background flex items-center justify-center px-4 relative">
+      <div 
+        className="absolute inset-0 opacity-10 bg-repeat"
+        style={{
+          backgroundImage: `url(${pataImage})`,
+          backgroundSize: '200px',
+        }}
+      />
+      <Card className="w-full max-w-md shadow-xl relative z-10">
         <CardHeader>
           <CardTitle className="text-3xl text-center font-bold">Seja Bem Vindo</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex justify-center mb-4">
-            <img 
-              src={pataImage} 
-              alt="Patinhas decorativas" 
-              className="w-full max-w-xs h-auto"
-            />
-          </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email:</Label>
             <Input id="email" type="email" />
