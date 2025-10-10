@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useNavigate, Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import pataImage from "@/assets/pata.png";
 
 const Cadastro = () => {
   const navigate = useNavigate();
@@ -47,8 +48,17 @@ const Cadastro = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4 py-12">
-      <Card className="w-full max-w-md shadow-xl">
+    <div className="min-h-screen bg-background flex items-center justify-center px-4 py-12 relative">
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `url(${pataImage})`,
+          backgroundSize: '80%',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
+      <Card className="w-full max-w-md shadow-xl relative z-10">
         <CardHeader>
           <CardTitle className="text-3xl text-center font-bold">Junte-se a Nós</CardTitle>
         </CardHeader>

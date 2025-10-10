@@ -14,7 +14,7 @@ const Login = () => {
         className="absolute inset-0 opacity-30"
         style={{
           backgroundImage: `url(${pataImage})`,
-          backgroundSize: 'contain',
+          backgroundSize: '80%',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
