@@ -11,10 +11,10 @@ const Login = () => {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4 relative">
       <div 
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-30"
         style={{
           backgroundImage: `url(${pataImage})`,
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}

@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import pataImage from "@/assets/pata.png";
 
 const RecuperarSenha = () => {
   const navigate = useNavigate();
@@ -22,8 +23,17 @@ const RecuperarSenha = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4">
-      <Card className="w-full max-w-md shadow-xl">
+    <div className="min-h-screen bg-background flex items-center justify-center px-4 relative">
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `url(${pataImage})`,
+          backgroundSize: 'contain',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
+      <Card className="w-full max-w-md shadow-xl relative z-10">
         <CardHeader>
           <CardTitle className="text-3xl font-bold">Esqueceu a senha</CardTitle>
           <p className="text-sm text-muted-foreground mt-2">
