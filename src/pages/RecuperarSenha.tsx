@@ -37,7 +37,7 @@ const RecuperarSenha = () => {
         <CardHeader>
           <CardTitle className="text-3xl font-bold">Esqueceu a senha</CardTitle>
           <p className="text-sm text-muted-foreground mt-2">
-            Insira seu email para receber um email no seu email que você inseriu como email na campo de email que se coloca emails
+            Insira o código enviado em seu e-mail para confirmar sua identidade
           </p>
         </CardHeader>
         <CardContent>
@@ -62,7 +62,7 @@ const RecuperarSenha = () => {
                 Voltar
               </Button>
               <Button type="submit" className="flex-1 bg-[#00CED1] hover:bg-[#00CED1]/90 text-white">
-                Cadastrar
+                Continuar
               </Button>
             </div>
           </form>
