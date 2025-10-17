@@ -35,33 +35,34 @@ const RecuperarSenha = () => {
       />
       <Card className="w-full max-w-md shadow-xl relative z-10">
         <CardHeader>
-          <CardTitle className="text-3xl font-bold">Esqueceu a senha</CardTitle>
-          <p className="text-sm text-muted-foreground mt-2">
-            Insira o código enviado em seu e-mail para confirmar sua identidade
-          </p>
+          <CardTitle className="text-3xl font-bold text-center">Esqueceu a senha</CardTitle>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <Input
                 id="email"
                 type="email"
+                placeholder="Email@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                className="bg-muted"
               />
+              <p className="text-sm text-center font-medium">
+                Insira o E-mail para receber o código
+              </p>
             </div>
 
-            <div className="flex gap-4 pt-2">
-              <Button
+            <div className="flex justify-center gap-6 pt-4">
+              <button
                 type="button"
-                variant="outline"
-                className="flex-1"
+                className="text-foreground font-medium hover:underline"
                 onClick={() => navigate("/login")}
               >
-                Voltar
-              </Button>
-              <Button type="submit" className="flex-1 bg-[#00CED1] hover:bg-[#00CED1]/90 text-white">
+                cancelar
+              </button>
+              <Button type="submit" className="bg-[#00CED1] hover:bg-[#00CED1]/90 text-white px-8">
                 Continuar
               </Button>
             </div>
