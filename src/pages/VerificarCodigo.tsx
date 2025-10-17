@@ -1,25 +1,39 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import pataImage from "@/assets/pata.png";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+} from "@/components/ui/input-otp";
 
-const RecuperarSenha = () => {
+const VerificarCodigo = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [email, setEmail] = useState("");
+  const [code, setCode] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    if (code.length !== 6) {
+      toast({
+        title: "Código inválido",
+        description: "Por favor, insira o código de 6 dígitos",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     toast({
-      title: "Email enviado!",
-      description: "Verifique sua caixa de entrada para o código de verificação",
+      title: "Código verificado!",
+      description: "Redirecionando para redefinir sua senha",
     });
     
-    navigate("/verificar-codigo");
+    // Aqui você redirecionaria para a página de nova senha
+    navigate("/login");
   };
 
   return (
@@ -39,18 +53,25 @@ const RecuperarSenha = () => {
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-2">
-              <Input
-                id="email"
-                type="email"
-                placeholder="Email@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="bg-muted"
-              />
+            <div className="space-y-4">
+              <div className="flex justify-center">
+                <InputOTP
+                  maxLength={6}
+                  value={code}
+                  onChange={(value) => setCode(value)}
+                >
+                  <InputOTPGroup>
+                    <InputOTPSlot index={0} />
+                    <InputOTPSlot index={1} />
+                    <InputOTPSlot index={2} />
+                    <InputOTPSlot index={3} />
+                    <InputOTPSlot index={4} />
+                    <InputOTPSlot index={5} />
+                  </InputOTPGroup>
+                </InputOTP>
+              </div>
               <p className="text-sm text-center font-medium">
-                Insira o E-mail para receber o código
+                Insira o código enviado em seu e-mail para confirmar sua identidade
               </p>
             </div>
 
@@ -58,7 +79,7 @@ const RecuperarSenha = () => {
               <button
                 type="button"
                 className="text-foreground font-medium hover:underline"
-                onClick={() => navigate("/login")}
+                onClick={() => navigate("/recuperar-senha")}
               >
                 cancelar
               </button>
@@ -73,4 +94,4 @@ const RecuperarSenha = () => {
   );
 };
 
-export default RecuperarSenha;
+export default VerificarCodigo;
