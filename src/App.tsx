@@ -9,7 +9,6 @@ import Recomendacoes from "./pages/Recomendacoes";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import RecuperarSenha from "./pages/RecuperarSenha";
-import Dashboard from "./pages/Dashboard";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 import TermosUso from "./pages/TermosUso";
 import AvisoLegal from "./pages/AvisoLegal";
@@ -31,7 +30,6 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/recuperar-senha" element={<RecuperarSenha />} />
-          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
           <Route path="/termos-uso" element={<TermosUso />} />
           <Route path="/aviso-legal" element={<AvisoLegal />} />

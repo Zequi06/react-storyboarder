@@ -49,10 +49,7 @@ const Login = () => {
             >
               Voltar
             </Button>
-            <Button 
-              className="flex-1 bg-[#00CED1] hover:bg-[#00CED1]/90 text-white"
-              onClick={() => navigate("/dashboard")}
-            >
+            <Button className="flex-1 bg-[#00CED1] hover:bg-[#00CED1]/90 text-white">
               Entrar
             </Button>
           </div>
